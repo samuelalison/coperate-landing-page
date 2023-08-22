@@ -128,7 +128,7 @@ px={'1rem'}
         {data.map((data, index)  => {
           return (<AccordionItem 
           key={index} 
-          open={index === open} 
+          // open={index === open} 
           title={data.title}
           desc={data.desc}
           toggle={() => toggle(index)}
