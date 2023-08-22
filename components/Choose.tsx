@@ -20,7 +20,7 @@ export const Choose = () => {
         <Image src='images/Rectangle 4054.png' />
 <Text
 color={'#000'}
-lineHeight={'34PX'}
+lineHeight={'34px'}
 fontWeight={300}
 fontStyle={'normal'}
 mt={{ base: '2rem', sm: '2rem', md: '49px'}}

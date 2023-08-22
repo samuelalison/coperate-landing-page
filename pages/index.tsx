@@ -6,6 +6,46 @@ import Hero from '@/components/Hero';
 import { Choose } from '@/components/Choose';
 import  Potentials  from '@/components/Potentials';
 import { Box } from '@chakra-ui/react';
+import { Tailored } from '@/components/Tailored';
+import { Integrations } from '@/components/Integrations';
+import { Team } from '@/components/Team';
+import { Features } from '@/components/Features';
+import { Process } from '@/components/Process';
+// import { Customers } from '@/components/Customers';
+import CarouselWithContent from '../components/CarouselWithContent';
+// import { Customers } from '@/components/Customers';
+import Socials from '@/components/Socials';
+
+import { Question } from '@/components/Question';
+import { Upgrade } from '@/components/Upgrade';
+import { PotentialsForm } from '@/components/PotentialsForm';
+import { DeliveryCarousel } from '@/components/DeliveryCarousel';
+
+
+
+
+const items = [
+  {
+    id: 1,
+    imageUrl: '/images/Ellipse 76.png',
+    content: 'We had to print new cards every time one of our employees got a promotion, and it was simply wasteful.  With Hardsands, we just update the info on the portal. Much easier and less expensive than ordering a new batch. Plus, our customers enjoy the first tap. There is a significant wow factor.',
+    name: 'DAVID BASSEY'
+  },
+  {
+    id: 2,
+    imageUrl: '/images/Ellipse 75.png',
+    content: 'We had to print new cards every time one of our employees got a promotion, and it was simply wasteful.  With Hardsands, we just update the info on the portal. Much easier and less expensive than ordering a new batch. Plus, our customers enjoy the first tap. There is a significant wow factor.',
+    name: 'DAVID BASSEY'
+  },
+  {
+    id: 3,
+    imageUrl: '/images/Ellipse 78.png',
+    content: 'We had to print new cards every time one of our employees got a promotion, and it was simply wasteful.  With Hardsands, we just update the info on the portal. Much easier and less expensive than ordering a new batch. Plus, our customers enjoy the first tap. There is a significant wow factor.',
+    name: 'DAVID BASSEY'
+  }
+];
+
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,7 +64,19 @@ export default function Home() {
         <Hero />
         <Choose />
         <Potentials />
-        <h2>hello</h2>
+        <Tailored />
+        <Integrations />
+        <Team />
+        <Features />
+        <Process />
+        {/* <Customers /> */}
+        <CarouselWithContent items={items} />
+        <Socials />
+         <DeliveryCarousel />
+        <Upgrade />
+        <Question />
+        <PotentialsForm />
+       
       </ main>
     </>
   )

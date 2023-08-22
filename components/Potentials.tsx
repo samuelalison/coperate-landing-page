@@ -21,11 +21,14 @@ alignItems={{md: 'center', lg: 'center'}}
    fontWeight={{base: 300, md: 500}}
    fontSize={{base: '28px', md: '48px' }}
    mb={'9px'}
-   >Want to Maximize <Text color={'#120801'}> Your Team's Potential? </Text></Text>
+   >Want to Maximize <Text color={'#120801'} as={'span'}> Your Team's </Text> Potential? </Text>
    <Text textAlign={'center'}
    mb={'54px'}
    >Fill out the form below and we’ll be in touch:</Text>
-   <Flex gap={'27px'}>
+   <Flex 
+   gap={{base:'0', lg:'27px'}}
+   flexDirection={{base: 'column', lg: 'row'}}
+   >
     <Box >
     <Text mb={'8px'}>Name</Text>
    <Input placeholder='Your Name' mb={'37px'}></Input>
@@ -47,8 +50,9 @@ alignItems={{md: 'center', lg: 'center'}}
  </Box>
 
  <Box 
- position={{md: 'relative'}} 
- bottom={{ md: '2rem', lg: '6rem'}}
+ position={{base:'relative', md: 'relative'}} 
+//  bottom={{base:'100px', lg:'0'}}
+ bottom={{ base: '5rem', lg: '6rem'}}
  >
     <Image src='images/Group 1254.png' 
     // maxW={{md: '601px'}}

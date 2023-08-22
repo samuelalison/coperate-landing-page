@@ -2,9 +2,11 @@ import {
     Box,
     Flex,
     Text,
+    Spacer,
     IconButton,
     Button,
     Stack,
+    HStack,
     Collapse,
     Icon,
     Image,
@@ -38,7 +40,18 @@ import {
           px={{ base: 9 }}
           borderBottom={1}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
-          align={'center'}>
+          align={'center'}
+          mb={{lg:'1.8rem'}}
+          
+          >
+          <Flex  justify={{ base: 'center', md: 'start' }}
+          justifyContent={{lg: 'space-between'}}
+          >
+            <Box>
+              <Image src='/images/Frame 1.png'/>
+            </Box>
+            <Spacer />
+
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: 2 }}
@@ -51,29 +64,16 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex  justify={{ base: 'center', md: 'start' }}>
-            <Box>
-              <Image src='/images/Frame 1.png'/>
-            </Box>
+
+        
   
-            <Flex display={{ base: 'none', md: 'flex' }} ml={48}>
+            <Flex display={{ base: 'none', md: 'flex' }} 
+            ml={48}
+            >
               <DesktopNav />
             </Flex>
           </Flex>
-  
-          <Stack
-            flex={{ base: 1, md: 0 }}
-            justify={'flex-end'}
-            direction={'row'}
-            spacing={6}>
-            
-           {/* <Box mr={'40px'}>
-            USD
-          </Box>
-          <Box>
-            Amount
-          </Box> */}
-          </Stack>
+
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
@@ -88,85 +88,38 @@ import {
   const DesktopNav = () => {
     const linkColor = useColorModeValue('black.800', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
-    const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+    // const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={14}>
-        {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
-            <Popover trigger={'hover'} placement={'bottom-start'}>
-              <PopoverTrigger>
-                <Link
-                 
-                  p={2}
-                  href={navItem.href ?? '#'}
-                  fontFamily={'Campton'}
-                  fontSize={'md'}
-                  fontWeight={500}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
-                  }}>
-                  {navItem.label}
-                </Link>
-              </PopoverTrigger>
-  
-              {navItem.children && (
-                <PopoverContent
-                  border={0}
-                  boxShadow={'xl'}
-                  bg={popoverContentBgColor}
-                  p={4}
-                  rounded={'xl'}
-                  minW={'sm'}>
-                  <Stack>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.label} {...child} />
-                    ))}
-                  </Stack>
-                </PopoverContent>
-              )}
-            </Popover>
-          </Box>
-        ))}
+      <Stack direction={'row'} 
+      // spacing={'200px'}
+      >
+       
+
+
+        <HStack 
+        spacing={10}
+        >
+         <Link>Products</Link> 
+         <Link>How To Use</Link> 
+         <Link>Blog</Link> 
+         <Link>Pricing</Link> 
+        </HStack>
+
+<Spacer />
+
+        <HStack
+        spacing={10}
+        ml={{lg: 48, md: 10}}
+>
+        <Link>USD</Link> 
+         <Link>Amount</Link> 
+        </HStack>
       </Stack>
     );
   };
   
-  const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-    return (
-      <Link
-        href={href}
-        role={'group'}
-        display={'block'}
-        p={2}
-        rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
-        <Stack direction={'row'} align={'center'}>
-          <Box>
-            <Text
-              transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
-              fontWeight={500}>
-              {label}
-            </Text>
-            <Text fontSize={'sm'}>{subLabel}</Text>
-          </Box>
-          <Flex
-            transition={'all .3s ease'}
-            transform={'translateX(-10px)'}
-            opacity={0}
-            _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-            justify={'flex-end'}
-            align={'center'}
-            flex={1}>
-            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-          </Flex>
-        </Stack>
-      </Link>
-    );
-  };
+ 
   
   const MobileNav = () => {
     return (
@@ -241,18 +194,6 @@ import {
   const NAV_ITEMS: Array<NavItem> = [
     {
       label: 'Products',
-    //   children: [
-    //     {
-    //       label: 'Explore Design Work',
-    //       subLabel: 'Trending Design to inspire you',
-    //       href: '#',
-    //     },
-    //     {
-    //       label: 'New & Noteworthy',
-    //       subLabel: 'Up-and-coming Designers',
-    //       href: '#',
-    //     },
-    //   ],
     },
     {
       label: 'How To Use',
@@ -263,4 +204,108 @@ import {
     {
       label: 'Pricing'
     },
+    {
+      label: 'USD'
+    },
+    {
+      label: 'Amount'
+    },
   ];
+
+
+  // const DesktopNav = () => {
+  //   const linkColor = useColorModeValue('black.800', 'gray.200');
+  //   const linkHoverColor = useColorModeValue('gray.800', 'white');
+  //   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  
+  //   return (
+  //     <Stack direction={'row'} spacing={14}>
+  //       {NAV_ITEMS.map((navItem) => (
+  //         <Box key={navItem.label}>
+  //           <Popover trigger={'hover'} placement={'bottom-start'}>
+  //             <PopoverTrigger>
+  //               <Link
+                 
+  //                 p={2}
+  //                 href={navItem.href ?? '#'}
+  //                 fontFamily={'Campton'}
+  //                 fontSize={'md'}
+  //                 fontWeight={500}
+  //                 color={linkColor}
+  //                 _hover={{
+  //                   textDecoration: 'none',
+  //                   color: linkHoverColor,
+  //                 }}>
+  //                 {navItem.label}
+  //               </Link>
+  //             </PopoverTrigger>
+  
+  //             {navItem.children && (
+  //               <PopoverContent
+  //                 border={0}
+  //                 boxShadow={'xl'}
+  //                 bg={popoverContentBgColor}
+  //                 p={4}
+  //                 rounded={'xl'}
+  //                 minW={'sm'}>
+  //                 <Stack>
+  //                   {navItem.children.map((child) => (
+  //                     <DesktopSubNav key={child.label} {...child} />
+  //                   ))}
+  //                 </Stack>
+  //               </PopoverContent>
+  //             )}
+  //           </Popover>
+  //         </Box>
+  //       ))}
+  //     </Stack>
+  //   );
+  // };
+
+
+
+
+
+
+  // const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  //   return (
+  //     <Link
+  //       href={href}
+  //       role={'group'}
+  //       display={'block'}
+  //       p={2}
+  //       rounded={'md'}
+  //       _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+  //       <Stack direction={'row'} align={'center'}>
+  //         <Box>
+  //           <Text
+  //             transition={'all .3s ease'}
+  //             _groupHover={{ color: 'pink.400' }}
+  //             fontWeight={500}>
+  //             {label}
+  //           </Text>
+  //           <Text fontSize={'sm'}>{subLabel}</Text>
+  //         </Box>
+  //         <Flex
+  //           transition={'all .3s ease'}
+  //           transform={'translateX(-10px)'}
+  //           opacity={0}
+  //           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+  //           justify={'flex-end'}
+  //           align={'center'}
+  //           flex={1}>
+  //           <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+  //         </Flex>
+  //       </Stack>
+  //     </Link>
+  //   );
+  // };
+
+
+
+ 
+ 
+  
+  
+  
+  
