@@ -73,8 +73,6 @@ mb={'5rem'}
           background={'#FBECDE'}
           borderRadius={'5px'}
            p={'0px 11px'}
-           transition="transform 0.3s"
-          transform={`translateX(-${item * 100}%)`}
            >
         <Image 
         src={item.imageUrl} 
