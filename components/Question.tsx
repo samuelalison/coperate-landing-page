@@ -11,14 +11,14 @@ interface FaqItem {
   }
 
 export const Question = () => {
-    const [open, setOpen] = useState(false); 
+    const [open, setOpen] = useState<number | null >(null); 
 
-    const toggle = (index) => {
+    const toggle = (index: number) => {
         if (open === index) {
-          return setOpen(false);
+          return setOpen(null);
+        } else {
+          setOpen(index);
         }
-    
-        setOpen(index);
       };
 
     const data: FaqItem[] = [
@@ -123,12 +123,12 @@ px={'1rem'}
 
 
 
-       <Box 
-       >
+       <Box>
         {data.map((data, index)  => {
-          return (<AccordionItem 
+          return (
+          <AccordionItem 
           key={index} 
-          // open={index === open} 
+          open={index === open} 
           title={data.title}
           desc={data.desc}
           toggle={() => toggle(index)}
