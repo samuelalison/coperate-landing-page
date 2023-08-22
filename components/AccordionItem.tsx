@@ -5,6 +5,8 @@ import { PiMinusCircleThin, PiPlusCircleThin } from 'react-icons/pi';
 interface AccordionItemProps {
   title: string;
   desc: string;
+  open: boolean; 
+  toggle: () => void;
 }
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ title, desc }) => {
