@@ -15,7 +15,7 @@ interface CarouselProps {
 }
 
 const CarouselWithContent: React.FC<CarouselProps> = ({ items }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>

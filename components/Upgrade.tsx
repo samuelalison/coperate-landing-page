@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Button, Image, Flex } from '@chakra-ui/react';
+import { Box, Text, Button, Image, Flex, Grid } from '@chakra-ui/react';
 
 export const Upgrade = () => {
   return (
@@ -10,7 +10,8 @@ export const Upgrade = () => {
     pt={{lg: '42px'}}
     paddingBottom={{lg: '120px'}}
     >
-        <Flex
+        <Grid
+        gridTemplateColumns={{lg: '1fr 1fr'}}
         alignItems={{lg: 'center'}}
         justifyContent={{lg: 'center'}}
         // p={{base: '20px', md: '100px'}}
@@ -61,7 +62,7 @@ export const Upgrade = () => {
             // width={'100%'}
             />
         </Box>
-        </Flex>
+        </Grid>
     </Box>
   )
 }

@@ -12,8 +12,8 @@ import { Team } from '@/components/Team';
 import { Features } from '@/components/Features';
 import { Process } from '@/components/Process';
 // import { Customers } from '@/components/Customers';
-import CarouselWithContent from '../components/CarouselWithContent';
-// import { Customers } from '@/components/Customers';
+// import CarouselWithContent from '../components/CarouselWithContent';
+import { Customers } from '@/components/Customers';
 import Socials from '@/components/Socials';
 
 import { Question } from '@/components/Question';
@@ -69,8 +69,8 @@ export default function Home() {
         <Team />
         <Features />
         <Process />
-        {/* <Customers /> */}
-        <CarouselWithContent items={items} />
+        <Customers />
+        {/* <CarouselWithContent items={items} /> */}
         <Socials />
          <DeliveryCarousel />
         <Upgrade />

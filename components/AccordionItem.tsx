@@ -21,7 +21,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, desc }) => {
       <Box
         pt="24px"
         display="flex"
-        justifyContent={{ base: 'start', lg: 'space-between' }}
+        justifyContent={{ base: 'space-between', lg: 'space-between' }}
         cursor="pointer"
         onClick={toggle}
       >
