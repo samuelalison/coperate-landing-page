@@ -11,12 +11,10 @@ import {
     Icon,
     Image,
     Link,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
+    Container,
     useColorModeValue,
-    useBreakpointValue,
     useDisclosure,
+    useBreakpointValue,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -31,31 +29,63 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box>
-        <Flex
+     <Container maxW={'5xl'} 
+     py={12}
+     >
+      <Flex
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
-          py={{ base: 8 }}
-          px={{ base: 9 }}
+          // py={{ base: 8 }}
+          // px={{ base: 9 }}
+          justifyContent={'space-between'}
           borderBottom={1}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}
           mb={{lg:'1.8rem'}}
-          
           >
-          <Flex  justify={{ base: 'center', md: 'start' }}
-          justifyContent={{lg: 'space-between'}}
-          >
+
+         
             <Box>
               <Image src='/images/Frame 1.png'/>
             </Box>
-            <Spacer />
+           
 
-          <Flex
-            flex={{ base: 1, md: 'auto' }}
-            ml={{ base: 2 }}
-            display={{ base: 'flex', md: 'none' }}>
+          
+
+        
+  
+            <Box
+            display={{ base: 'none', md: 'flex' }} 
+            // ml={48}
+            >
+             <HStack 
+        spacing={4}
+        >
+         <Link>Products</Link> 
+         <Link>How To Use</Link> 
+         <Link>Blog</Link> 
+         <Link>Pricing</Link> 
+        </HStack>
+              </Box>
+
+
+     <Box>
+     <HStack
+     display={{ base: 'none', md: 'flex' }} 
+>
+        <Link>USD</Link> 
+         <Link>Amount</Link> 
+        </HStack>
+     </Box>
+
+
+
+
+
+              <Box
+            display={{md: 'none' }}
+            >
             <IconButton
               onClick={onToggle}
               icon={
@@ -63,62 +93,17 @@ import {
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
             />
-          </Flex>
-
-        
-  
-            <Flex display={{ base: 'none', md: 'flex' }} 
-            ml={48}
-            >
-              <DesktopNav />
-            </Flex>
-          </Flex>
-
+          </Box>
         </Flex>
   
+       
+
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
-      </Box>
+      </Container>   
     );
   }
-  
-
-
-  const DesktopNav = () => {
-    const linkColor = useColorModeValue('black.800', 'gray.200');
-    const linkHoverColor = useColorModeValue('gray.800', 'white');
-    // const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-  
-    return (
-      <Stack direction={'row'} 
-      // spacing={'200px'}
-      >
-       
-
-
-        <HStack 
-        spacing={10}
-        >
-         <Link>Products</Link> 
-         <Link>How To Use</Link> 
-         <Link>Blog</Link> 
-         <Link>Pricing</Link> 
-        </HStack>
-
-<Spacer />
-
-        <HStack
-        spacing={10}
-        ml={{lg: 48, md: 10}}
->
-        <Link>USD</Link> 
-         <Link>Amount</Link> 
-        </HStack>
-      </Stack>
-    );
-  };
-  
  
   
   const MobileNav = () => {
@@ -133,12 +118,16 @@ import {
       </Stack>
     );
   };
+
+
   
   const MobileNavItem = ({ label, children, href }: NavItem) => {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Stack spacing={4} onClick={children && onToggle}>
+      <Stack 
+      // spacing={8} 
+      onClick={children && onToggle}>
         <Flex
           py={2}
           as={Link}
@@ -211,101 +200,3 @@ import {
       label: 'Amount'
     },
   ];
-
-
-  // const DesktopNav = () => {
-  //   const linkColor = useColorModeValue('black.800', 'gray.200');
-  //   const linkHoverColor = useColorModeValue('gray.800', 'white');
-  //   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-  
-  //   return (
-  //     <Stack direction={'row'} spacing={14}>
-  //       {NAV_ITEMS.map((navItem) => (
-  //         <Box key={navItem.label}>
-  //           <Popover trigger={'hover'} placement={'bottom-start'}>
-  //             <PopoverTrigger>
-  //               <Link
-                 
-  //                 p={2}
-  //                 href={navItem.href ?? '#'}
-  //                 fontFamily={'Campton'}
-  //                 fontSize={'md'}
-  //                 fontWeight={500}
-  //                 color={linkColor}
-  //                 _hover={{
-  //                   textDecoration: 'none',
-  //                   color: linkHoverColor,
-  //                 }}>
-  //                 {navItem.label}
-  //               </Link>
-  //             </PopoverTrigger>
-  
-  //             {navItem.children && (
-  //               <PopoverContent
-  //                 border={0}
-  //                 boxShadow={'xl'}
-  //                 bg={popoverContentBgColor}
-  //                 p={4}
-  //                 rounded={'xl'}
-  //                 minW={'sm'}>
-  //                 <Stack>
-  //                   {navItem.children.map((child) => (
-  //                     <DesktopSubNav key={child.label} {...child} />
-  //                   ))}
-  //                 </Stack>
-  //               </PopoverContent>
-  //             )}
-  //           </Popover>
-  //         </Box>
-  //       ))}
-  //     </Stack>
-  //   );
-  // };
-
-
-
-
-
-
-  // const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  //   return (
-  //     <Link
-  //       href={href}
-  //       role={'group'}
-  //       display={'block'}
-  //       p={2}
-  //       rounded={'md'}
-  //       _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
-  //       <Stack direction={'row'} align={'center'}>
-  //         <Box>
-  //           <Text
-  //             transition={'all .3s ease'}
-  //             _groupHover={{ color: 'pink.400' }}
-  //             fontWeight={500}>
-  //             {label}
-  //           </Text>
-  //           <Text fontSize={'sm'}>{subLabel}</Text>
-  //         </Box>
-  //         <Flex
-  //           transition={'all .3s ease'}
-  //           transform={'translateX(-10px)'}
-  //           opacity={0}
-  //           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-  //           justify={'flex-end'}
-  //           align={'center'}
-  //           flex={1}>
-  //           <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-  //         </Flex>
-  //       </Stack>
-  //     </Link>
-  //   );
-  // };
-
-
-
- 
- 
-  
-  
-  
-  

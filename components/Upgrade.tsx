@@ -1,12 +1,18 @@
 import React from 'react'
-import { Box, Text, Button, Image, Flex, Grid } from '@chakra-ui/react';
+import { Box, Container, Text, Button, Image, Flex, Grid } from '@chakra-ui/react';
 
 export const Upgrade = () => {
   return (
-    
+    <Box
+    background={'#FEF8F3'}
+    >
+
+     <Container
+     maxW={'5xl'} py={12}
+     >
     <Box
     mt={'1rem'}
-    background={'#FEF8F3'}
+   
     pt={{lg: '42px'}}
     paddingBottom={{lg: '120px'}}
     >
@@ -63,6 +69,8 @@ export const Upgrade = () => {
             />
         </Box>
         </Grid>
+    </Box>
+    </Container> 
     </Box>
   )
 }

@@ -7,13 +7,13 @@ export const Integrations = () => {
     mr={{lg: '50px'}}
     ml={{lg: '50px'}}
     >
+    <Box background={"#000"}>
+    <Container maxW={'5xl'} py={12}>
     <Flex
-    background={"#000"}
     alignItems={'center'}
-    p={{base: '20px', md: '100px'}}
+    p={{base: '20px'}}
     flexDirection={{base: 'column', lg: 'row'}}
     >
-     
      
       <Box 
       w={{base:0, md:'1px'}}  
@@ -66,6 +66,8 @@ export const Integrations = () => {
         />
       </Box>
     </Flex>
+      </Container>
+    </Box>
     </Box>
   )
 }

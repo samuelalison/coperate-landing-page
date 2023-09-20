@@ -1,11 +1,12 @@
 import React from 'react'
-import { Box, Text, Flex, Image } from '@chakra-ui/react';
+import {Container, Box, Text, Flex, Image } from '@chakra-ui/react';
 
 export const Process = () => {
   return (
-   <Box p={{lg: '40px'}}
-   
-   >
+   <Container maxW={'5xl'} py={12}>
+   <Box 
+   // p={{lg: '40px'}}
+    >
     <Text textAlign={'center'}
         color={'#DF9F71'}
         fontFamily={'MADE Outer Sans'}
@@ -141,5 +142,6 @@ export const Process = () => {
          <Box></Box>
         </Flex>
    </Box>
+   </Container>
   )
 }

@@ -147,7 +147,7 @@ export const DeliveryCarousel = () => {
                      fontWeight={300}
                      lineHeight={'normal'}
                      p={{lg: '6rem 6rem'}}
-                     >STAR NOW</Text>
+                     >START NOW</Text>
                 </Button>
     </Box>
   </Container>

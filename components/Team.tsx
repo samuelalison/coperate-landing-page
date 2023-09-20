@@ -1,11 +1,12 @@
 import React from 'react'
-import { Flex, Box, Image, Text } from '@chakra-ui/react';
+import {Container, Flex, Box, Image, Text } from '@chakra-ui/react';
 
 export const Team = () => {
   return (
+    <Container maxW={'5xl'} py={12}>
     <Flex
     alignItems={'center'}
-    p={{base: '20px', md: '100px'}}
+    p={{base: '20px'}}
     flexDirection={{base: 'column', lg: 'row'}}
     >
       <Box>
@@ -68,5 +69,6 @@ export const Team = () => {
             </Flex>
           </Box>
     </Flex>
+    </Container>
   )
 }

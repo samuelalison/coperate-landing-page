@@ -3,7 +3,7 @@ import { Container, Text, Box, Flex, Image, Input } from '@chakra-ui/react';
 
 export const PotentialsForm = () => {
   return (
-<Box 
+<Container maxW={'5xl'} py={12}
 mt={'2rem'}
 >
 <Flex 
@@ -64,6 +64,6 @@ alignItems={{md: 'center', lg:'center'}}
 
 
 </Flex>
-</ Box>
+</ Container>
   )
 }
